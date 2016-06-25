@@ -735,3 +735,54 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "30294997460"], ["name", "Thom Browne"], ["page_URL", "https://www.facebook.com/THOMBROWNE.newyork"], ["created_at", "2016-06-25 17:09:07.558246"], ["updated_at", "2016-06-25 17:09:07.558246"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "90824638062"], ["name", "Paul Smith"], ["page_URL", "https://www.facebook.com/paulsmithdesign"], ["created_at", "2016-06-25 17:09:07.569615"], ["updated_at", "2016-06-25 17:09:07.569615"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "308998183837"], ["name", "Warby Parker"], ["page_URL", "https://www.facebook.com/warbyparker"], ["created_at", "2016-06-25 17:09:07.572177"], ["updated_at", "2016-06-25 17:09:07.572177"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "166447633392934"], ["name", "Everlane"], ["page_URL", "https://www.facebook.com/Everlane"], ["created_at", "2016-06-25 17:09:07.575657"], ["updated_at", "2016-06-25 17:09:07.575657"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "8417606814"], ["name", "Bonobos"], ["page_URL", "https://www.facebook.com/bonobos/"], ["created_at", "2016-06-25 17:09:07.578283"], ["updated_at", "2016-06-25 17:09:07.578283"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "125090655124"], ["name", "HOOD BY AIR"], ["page_URL", "https://www.facebook.com/HOODBYAIR"], ["created_at", "2016-06-25 17:09:07.580668"], ["updated_at", "2016-06-25 17:09:07.580668"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "63263972393"], ["name", "Alexander Wang"], ["page_URL", "https://www.facebook.com/AlexanderWangNY/"], ["created_at", "2016-06-25 17:09:07.583523"], ["updated_at", "2016-06-25 17:09:07.583523"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "1424235164545661"], ["name", "Gosha Rubchinskiy"], ["page_URL", "https://www.facebook.com/gosharubchinskiyofficial"], ["created_at", "2016-06-25 17:09:07.585680"], ["updated_at", "2016-06-25 17:09:07.585680"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "186134558102768"], ["name", "Rodarte"], ["page_URL", "https://www.facebook.com/OfficialRodarte"], ["created_at", "2016-06-25 17:09:07.587751"], ["updated_at", "2016-06-25 17:09:07.587751"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "273738842470"], ["name", "Olympia Le-Tan"], ["page_URL", "https://www.facebook.com/olympialetan/"], ["created_at", "2016-06-25 17:09:07.590180"], ["updated_at", "2016-06-25 17:09:07.590180"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "190417927639701"], ["name", "illesteva"], ["page_URL", "https://www.facebook.com/illesteva"], ["created_at", "2016-06-25 17:09:07.593394"], ["updated_at", "2016-06-25 17:09:07.593394"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "414956742047889"], ["name", "March11"], ["page_URL", "https://www.facebook.com/march11.us"], ["created_at", "2016-06-25 17:09:07.596065"], ["updated_at", "2016-06-25 17:09:07.596065"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "122792026424"], ["name", "Burberry"], ["page_URL", "https://www.facebook.com/Burberry"], ["created_at", "2016-06-25 17:09:07.599255"], ["updated_at", "2016-06-25 17:09:07.599255"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "91750413437"], ["name", "SUNO"], ["page_URL", "https://www.facebook.com/SUNONEWYORK"], ["created_at", "2016-06-25 17:09:07.601603"], ["updated_at", "2016-06-25 17:09:07.601603"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "288214761363906"], ["name", "Lacoste"], ["page_URL", "https://www.facebook.com/LacosteUS"], ["created_at", "2016-06-25 17:09:07.603804"], ["updated_at", "2016-06-25 17:09:07.603804"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["facebook_id", "5677674978"], ["name", "American Apparel"], ["page_URL", "https://www.facebook.com/AmericanApparel"], ["created_at", "2016-06-25 17:09:07.606263"], ["updated_at", "2016-06-25 17:09:07.606263"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "brands" ("facebook_id", "name", "page_URL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["facebook_id", "316228488429887"], ["name", "& Another Stories"], ["page_URL", "https://www.facebook.com/andotherstories"], ["created_at", "2016-06-25 17:09:07.609266"], ["updated_at", "2016-06-25 17:09:07.609266"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m

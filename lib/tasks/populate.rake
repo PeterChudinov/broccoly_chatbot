@@ -1,5 +1,7 @@
-task :populate do
-  CSV.foreach("https://raw.githubusercontent.com/PeterChudinov/broccoly_chatbot/master/populate.csv", headers: true) do |row|
+task :populate => [:environment] do
+  file = "#{Rails.root}/populate.csv"
+
+  CSV.foreach(file, headers: true) do |row|
     Brand.create! row.to_hash
   end
 end
