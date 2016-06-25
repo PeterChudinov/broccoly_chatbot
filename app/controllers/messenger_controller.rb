@@ -8,6 +8,7 @@ class MessengerController < Messenger::MessengerController
           )
       )
     end
+    logger.debug "fb_params: #{fb_params}"
     render nothing: true, status: 200
   end
 end
