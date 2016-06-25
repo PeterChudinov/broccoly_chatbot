@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+Brands:
+<% @brands.each do |brand| %>
+    <%= brand.name %>
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
