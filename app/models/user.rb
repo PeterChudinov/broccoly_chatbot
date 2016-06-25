@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 				args.push(type, value.upcase)
 			end
 		end
-		ids = BrandOption.where(where.join(' AND '), *args).group(:brand_id).order('COUNT(*) DESC').pluck(:brand_id)
+		ids = BrandOption.where(where.join(' OR '), *args).group(:brand_id).order('COUNT(*) DESC').pluck(:brand_id)
 		Brand.where(id: ids)
 	end
 end
