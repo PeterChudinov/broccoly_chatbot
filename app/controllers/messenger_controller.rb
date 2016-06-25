@@ -14,14 +14,7 @@ postback?: #{fb_params.postback?}"
       )
 
     end
-    if fb_params.message?
-      Messenger::Client.send(
-          Messenger::Request.new(
-              Messenger::Elements::Text.new(text: "Your wrote #{fb_params.text_message}"),
-              fb_params.sender_id
-          )
-      )
-    elsif fb_params.postback?
+    if fb_params.postback?
       value = fb_params.send(:messaging_entry)['postback']['payload']
       case value
       when 'lets starts'
@@ -86,6 +79,14 @@ postback?: #{fb_params.postback?}"
           )
         when 'Adventurous', 'Self-Centered', 'Open/Kind', 'Closed/Introvert',
           User.where(facebook_id: fb_params.sender_id).update_all(personality: value)
+
+          brands = User.find_by(facebook_id: fb_params.sender_id).matching_brands
+          Messenger::Client.send(
+              Messenger::Request.new(
+                  Messenger::Elements::Text.new(text: "Your brands are #{brands.map(&:name).join(', ')}"),
+                  fb_params.sender_id
+              )
+          )
           createButtonTemplate(
               'Select a brand that you know and wear or would like to wear.',
               'no data'
