@@ -11,10 +11,6 @@ class BrandsController < ApplicationController
   # GET /brands/1.json
   def show
   end
-  
-  def import
-    Brand.import(params[:file])
-  end
 
   # GET /brands/new
   def new
