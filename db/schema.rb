@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625143700) do
+ActiveRecord::Schema.define(version: 20160625151408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20160625143700) do
     t.integer  "facebook_id"
     t.string   "name"
     t.string   "page_URL"
-    t.integer  "gender"
-    t.integer  "type"
-    t.integer  "style"
-    t.integer  "price"
-    t.integer  "music"
-    t.integer  "mood"
-    t.integer  "personality"
   end
 
   create_table "matches", force: :cascade do |t|
