@@ -51,7 +51,45 @@ postback?: #{fb_params.postback?}"
           )
         when 'Casual', 'Formal', 'Active', 'Avant-Garde'
           User.where(facebook_id: fb_params.sender_id).update_all(style: value)
-
+          createButtonTemplate(
+              'In what price tier do you prefer to shop?',
+              'Mass Market (<$200)',
+              'Contemporary ($150-450)',
+              'Luxury ($400-1000+)',
+          )
+        when 'Mass Market (<$200)', 'Contemporary ($150-450)', 'Luxury ($400-1000+)'
+          User.where(facebook_id: fb_params.sender_id).update_all(price: value)
+          createButtonTemplate(
+              'Cool! Select the music style you prefer.',
+              'Pop/Indie',
+              'Rock',
+              'Club/Dance',
+              'Country/Latin',
+          )
+        when 'Pop/Indie', 'Rock', 'Club/Dance', 'Country/Latin'
+          User.where(facebook_id: fb_params.sender_id).update_all(music: value)
+          createButtonTemplate(
+              'And what word best describes your most common mood?',
+              'Fun/Excited',
+              'Chill/Relaxed',
+              'Focused',
+              'Sad/Disapointed/confused',
+          )
+        when 'Fun/Excited', 'Chill/Relaxed', 'Focused', 'Sad/Disapointed/confused',
+          User.where(facebook_id: fb_params.sender_id).update_all(mood: value)
+          createButtonTemplate(
+              'How would you describe your personality?',
+              'Adventurous',
+              'Self-Centered',
+              'Open/Kind',
+              'Closed/Introvert',
+          )
+        when 'Adventurous', 'Self-Centered', 'Open/Kind', 'Closed/Introvert',
+          User.where(facebook_id: fb_params.sender_id).update_all(personality: value)
+          createButtonTemplate(
+              'Select a brand that you know and wear or would like to wear.',
+              'no data'
+          )
       end
     end
     render nothing: true, status: 200
