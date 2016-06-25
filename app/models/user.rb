@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 			value = self.attributes[type.to_s]
 			unless value.nil?
 				where.push('(key = ? AND value=?)')
-				args.push(type, value.upcase)
+				args.push(type.upcase, value.upcase)
 			end
 		end
 		ids = BrandOption.where(where.join(' OR '), *args).group(:brand_id).order('COUNT(*) DESC').pluck(:brand_id)
