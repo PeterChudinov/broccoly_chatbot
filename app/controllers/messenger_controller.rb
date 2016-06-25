@@ -41,7 +41,7 @@ postback?: #{fb_params.postback?}"
             # 'All',
         )
         when 'Clothing', 'Accessories', 'Shoes', 'All'
-          User.where(facebook_id: fb_params.sender_id).update_all(type: value)
+          User.where(facebook_id: fb_params.sender_id).update_all(piece: value)
           createButtonTemplate(
               'What about your aesthetics? Select the word that most matches your style',
               'Casual',
