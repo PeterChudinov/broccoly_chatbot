@@ -45,22 +45,8 @@ group :development do
   gem 'spring'
 end
 
-<<<<<<< Updated upstream
 group :production do
   gem 'rails_12factor'
 end
-=======
-<<<<<<< HEAD
-gem 'bundle'
-
-# group :production do
-#   gem 'rails_12factor'
-# end
-=======
-group :production do
-  gem 'rails_12factor'
-end
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 gem 'messenger-ruby'
