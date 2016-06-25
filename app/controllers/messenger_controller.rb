@@ -38,7 +38,7 @@ postback?: #{fb_params.postback?}"
             'Clothing',
             'Accessories',
             'Shoes',
-            'All',
+            # 'All',
         )
         when 'Clothing', 'Accessories', 'Shoes', 'All'
           User.where(facebook_id: fb_params.sender_id).update_all(type: value)
@@ -47,7 +47,7 @@ postback?: #{fb_params.postback?}"
               'Casual',
               'Formal',
               'Active',
-              'Avant-Garde',
+              # 'Avant-Garde',
           )
         when 'Casual', 'Formal', 'Active', 'Avant-Garde'
           User.where(facebook_id: fb_params.sender_id).update_all(style: value)
@@ -64,7 +64,7 @@ postback?: #{fb_params.postback?}"
               'Pop/Indie',
               'Rock',
               'Club/Dance',
-              'Country/Latin',
+              # 'Country/Latin',
           )
         when 'Pop/Indie', 'Rock', 'Club/Dance', 'Country/Latin'
           User.where(facebook_id: fb_params.sender_id).update_all(music: value)
@@ -73,7 +73,7 @@ postback?: #{fb_params.postback?}"
               'Fun/Excited',
               'Chill/Relaxed',
               'Focused',
-              'Sad/Disapointed/confused',
+              # 'Sad/Disapointed/confused',
           )
         when 'Fun/Excited', 'Chill/Relaxed', 'Focused', 'Sad/Disapointed/confused',
           User.where(facebook_id: fb_params.sender_id).update_all(mood: value)
@@ -82,7 +82,7 @@ postback?: #{fb_params.postback?}"
               'Adventurous',
               'Self-Centered',
               'Open/Kind',
-              'Closed/Introvert',
+              # 'Closed/Introvert',
           )
         when 'Adventurous', 'Self-Centered', 'Open/Kind', 'Closed/Introvert',
           User.where(facebook_id: fb_params.sender_id).update_all(personality: value)
