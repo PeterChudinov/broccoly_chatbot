@@ -80,7 +80,7 @@ postback?: #{fb_params.postback?}"
         when 'Adventurous', 'Self-Centered', 'Open/Kind', 'Closed/Introvert',
           User.where(facebook_id: fb_params.sender_id).update_all(personality: value)
 
-          brands = User.find_by(facebook_id: fb_params.sender_id).matching_brands
+          brands = User.find_by(facebook_id: fb_params.sender_id).matching_brands.first(3)
           Messenger::Client.send(
               Messenger::Request.new(
                   Messenger::Elements::Text.new(text: "Your brands are #{brands.map(&:name).join(', ')}"),
