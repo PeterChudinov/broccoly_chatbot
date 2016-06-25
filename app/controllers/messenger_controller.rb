@@ -19,17 +19,17 @@ postback?: #{fb_params.postback?}"
             Messenger::Elements::Button.new(
               type: 'postback',
               title: 'Female',
-              payload: 'female'
+              value: 'female'
             ),
             Messenger::Elements::Button.new(
               type: 'postback',
               title: 'Male',
-              payload: 'male'
+              value: 'male'
             ),
             Messenger::Elements::Button.new(
               type: 'postback',
               title: 'Neutral',
-              payload: 'neutral'
+              value: 'neutral'
             ),
           ]
         )
