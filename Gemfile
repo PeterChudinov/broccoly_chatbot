@@ -45,6 +45,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'bundler'
+
 group :production do
   gem 'rails_12factor'
 end
