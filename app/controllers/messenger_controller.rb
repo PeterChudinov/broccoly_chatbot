@@ -25,33 +25,55 @@ postback?: #{fb_params.postback?}"
       value = fb_params.send(:messaging_entry)['postback']['payload']
       case value
       when 'lets starts'
-        buttons = Messenger::Templates::Buttons.new(
-          text: 'Select gender you identity with',
-          buttons: [
-            Messenger::Elements::Button.new(
-              type: 'postback',
-              title: 'Female',
-              value: 'female'
-            ),
-            Messenger::Elements::Button.new(
-              type: 'postback',
-              title: 'Male',
-              value: 'male'
-            ),
-            Messenger::Elements::Button.new(
-              type: 'postback',
-              title: 'Neutral',
-              value: 'neutral'
-            ),
-          ]
+        createButtonTemplate(
+            'Select gender you identity with',
+            'Female',
+            'Male',
+            'Neutral',
         )
-        Messenger::Client.send(
-            Messenger::Request.new(buttons, fb_params.sender_id)
-        )
-      when 'male', 'female', 'neutral'
+      when 'Male', 'Female', 'Neutral'
         User.where(facebook_id: fb_params.sender_id).update_all(gender: value)
+        createButtonTemplate(
+            'Great. Now please select type of items are you looking for.',
+            'Clothing',
+            'Accessories',
+            'Shoes',
+            'All',
+        )
+        when 'Clothing', 'Accessories', 'Shoes', 'All'
+          User.where(facebook_id: fb_params.sender_id).update_all(type: value)
+          createButtonTemplate(
+              'What about your aesthetics? Select the word that most matches your style',
+              'Casual',
+              'Formal',
+              'Active',
+              'Avant-Garde',
+          )
+        when 'Casual', 'Formal', 'Active', 'Avant-Garde'
+          User.where(facebook_id: fb_params.sender_id).update_all(style: value)
+
       end
     end
     render nothing: true, status: 200
+  end
+
+  private
+
+  def createButtonTemplate(name, *options)
+    buttons = []
+    options.each do |val|
+      buttons.push(Messenger::Elements::Button.new(
+          type: 'postback',
+          title: val,
+          value: val
+      ))
+    end
+
+    Messenger::Client.send(
+        Messenger::Request.new(Messenger::Templates::Buttons.new(
+            text: name,
+            buttons: buttons,
+        ), fb_params.sender_id)
+    )
   end
 end
