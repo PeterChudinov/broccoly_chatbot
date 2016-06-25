@@ -1,5 +1,6 @@
 class MessengerController < Messenger::MessengerController
   def webhook
+    logger.debug "fb_params: #{fb_params}"
     if fb_params.first_entry.callback.message?
       Messenger::Client.send(
           Messenger::Request.new(
@@ -8,7 +9,6 @@ class MessengerController < Messenger::MessengerController
           )
       )
     end
-    logger.debug "fb_params: #{fb_params}"
     render nothing: true, status: 200
   end
 end
