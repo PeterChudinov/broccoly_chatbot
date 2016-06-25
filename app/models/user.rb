@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 		types = %i{gender, type, style, price, music, mood, personality}
 		where = {}
 		types.each do |type|
-			where[type] = user.send(:type)
+			where[type] = user.send(type)
 		end
 		ids = BrandOption.where(where).group(:brand_id).order('COUNT(*) DESC').pluck(:brand_id)
 		Brand.where(id: ids)
