@@ -48,8 +48,8 @@ postback?: #{fb_params.postback?}"
         Messenger::Client.send(
             Messenger::Request.new(buttons, fb_params.sender_id)
         )
-        when 'male', 'female', 'neutral'
-          User.where(facebook_id: fb_params.sender_id).update_all(gender: value)
+      when 'male', 'female', 'neutral'
+        User.where(facebook_id: fb_params.sender_id).update_all(gender: value)
       end
     end
     render nothing: true, status: 200
