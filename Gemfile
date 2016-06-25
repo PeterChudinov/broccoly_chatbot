@@ -52,3 +52,4 @@ group :production do
 end
 
 gem 'messenger-ruby'
+gem 'rest-client', '1.8.0'
