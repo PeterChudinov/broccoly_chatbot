@@ -1,6 +1,6 @@
 class MessengerController < Messenger::MessengerController
   def webhook
-    logger.debug "params: #{params}"
+    # logger.debug "params: #{params}"
     logger.debug "message?: #{fb_params.message?}"
     logger.debug "delivery?: #{fb_params.delivery?}"
     logger.debug "postback?: #{fb_params.postback?}"
